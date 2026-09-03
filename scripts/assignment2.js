@@ -12,22 +12,28 @@ greetCustomer("Isaac");
 greetCustomer("John");
 greetCustomer("Jerry");
 
-function calculateTotal(price, tax) {
-    let total = price + (price * tax);
-    return total
-}
-
 function calculateTip(total, tip) {
     let tipAmount = total * tip;
-    return tipAmount;
+    let result = tipAmount + total;
+    return result;
 }
 
-console.log("Dish: Ceviche\nPrice: 9.99");
+function calculateTotal(price, tax) {
+    let total = calculateTip(price + (price * tax),.15);
+    return total;
+}
 
-let priceWithTax = calculateTotal(9.99, .09);
+console.log("Dish: Ceviche\nPrice: 15.99");
+let price = 15.99
+let priceTotal = calculateTotal(price, .15);
+console.log(`Total with tax (9%) and tip (15%): $${priceTotal.toFixed(2)}`);
 
-console.log(`Total with tax: $${priceWithTax.toFixed(2)}`);
+console.log("Dish: Tacos\nPrice: 12.99");
+price = 12.99
+priceTotal = calculateTotal(price, .15);
+console.log(`Total with tax (9%) and tip (15%): $${priceTotal.toFixed(2)}`);
 
-let priceWithTip = calculateTip(priceWithTax, .15);
-
-console.log(`Tip (15%): $${priceWithTip.toFixed(2)}`);
+console.log("Dish: Empanadas\nPrice: 9.99");
+price = 9.99
+priceTotal = calculateTotal(price, .18);
+console.log(`Total with tax (9%) and tip (18%): $${priceTotal.toFixed(2)}`);
