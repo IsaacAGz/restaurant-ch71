@@ -65,7 +65,7 @@ let price = 89.99;
 console.log(`Price is ${price}`);
 
 console.log(`Regular price: ${applyMemberDiscount(price, false)}`);
-console.log(`Member price: - ${applyMemberDiscount(price, true)}`);
+console.log(`Member price: - ${applyMemberDiscount(price, true).toFixed(2)}`);
 
 // Part 4 Combining if with yout Assignment 2 functions
 console.log("==================== PART 4 ======================");
@@ -78,7 +78,7 @@ function calculateTotal(price, tax) {
 function printOrderSummary (dishName, price, isMember) {
     console.log("Order Summary");
     console.log(`Dish: ${dishName}`);
-    console.log(`Original price: ${price}`);
+    console.log(`Original price: $${price}`);
     
     total = calculateTotal(price, .08);
     console.log(`Total with Tax: ${total.toFixed(2)}`);
@@ -93,7 +93,7 @@ function printOrderSummary (dishName, price, isMember) {
     checkDelivery(total.toFixed(2));
 }
 
-printOrderSummary("Pad See ew", 18, true);
+printOrderSummary("Pad See ew", 40, true);
 console.log();
 printOrderSummary("Thai tea", 7, false);
 
