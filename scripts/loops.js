@@ -109,3 +109,9 @@ for (let i = 0; i < DAYS.length; i++) {
 document.getElementById("sales").innerHTML = output;
 
 
+
+
+
+
+
+
